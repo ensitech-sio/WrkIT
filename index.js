@@ -65,7 +65,7 @@ function getScheduleInfo(schedule) {
 
         if (cours.cours.toLowerCase().includes('pause midi')) {
             const [hours, minutes] = cours.debut.split(':').map(Number);
-            const pauseDate = new Date(Date.UTC(nowUTC.getUTCFullYear(), nowUTC.getUTCMonth(), nowUTC.getUTCDate(), hours, minutes));
+            const pauseDate = new Date(Date.UTC(nowUTC.getUTCFullYear(), nowUTC.getUTCMonth(), nowUTC.getUTCDate(), hours - 2, minutes));
             const timeDiffPause = pauseDate - nowUTC; // Compare avec nowUTC
             const minutesUntilPause = Math.floor((timeDiffPause / 1000) / 60);
             
